@@ -1,0 +1,10 @@
+---
+automerge: false
+projects:
+  -
+    autoplan:
+      when_modified:
+        - "*.tf*"
+        - "*.hcl"
+    dir: repos/test-repo
+version: 3

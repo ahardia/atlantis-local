@@ -1,0 +1,20 @@
+# https://www.runatlantis.io/docs/server-configuration.html#repo-config-json
+repos:
+  - id: /.*/
+    # allow repo level custom workflows
+    allow_custom_workflows: true
+    # allow repo level configs to override the following
+    allowed_overrides:
+      - apply_requirements
+      - workflow
+    apply_requirements:
+      - approved
+    workflow: default
+
+workflows:
+  default:
+    plan:
+      steps:
+        - run: terragrunt_init
+        - run: terragrunt_plan $PLANFILE
+        - run: echo 'Running tfsec...' && tfsec
