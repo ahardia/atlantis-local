@@ -6,5 +6,6 @@ projects:
       when_modified:
         - "*.tf*"
         - "*.hcl"
-    dir: repos/test-repo
+    dir: /repos/test-repo
+    name: test-repo
 version: 3

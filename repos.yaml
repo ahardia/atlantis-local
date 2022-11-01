@@ -16,5 +16,5 @@ workflows:
     plan:
       steps:
         - run: terragrunt_init
-        - run: terragrunt_plan $PLANFILE
         - run: echo 'Running tfsec...' && tfsec
+        - run: terragrunt plan
